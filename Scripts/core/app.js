@@ -1,3 +1,8 @@
+/* File name: app.ts */
+/* Author's name: Jesse Cannon */
+/* Student ID: 200348532 */
+/* Web site name: http://comp1073-w2017-finalexam-200348532.azurewebsites.net/ */
+/* File description: TypeScript page for final exam */
 // IIFE - Immediately Invoked Function Expression
 (function () {
     var canvas;
@@ -24,7 +29,7 @@
         Main(); // call the main function
     }
     function Update(event) {
-        firstDieLabel.rotation = 0; // rotate counter clockwise every frame
+        firstDieLabel.rotation = 0; // make number labels stay still in place
         secondDieLabel.rotation = 0;
         stage.update(); // redraw the stage
     }
@@ -110,6 +115,7 @@
         rollButton.x = 175;
         rollButton.y = 340;
         stage.addChild(rollButton);
+        // rollButton on clikc function to generate a random number 
         rollButton.on("click", function () {
             Math.floor(Math.random() * 6);
             firstDieLabel.text = "1";
