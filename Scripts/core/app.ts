@@ -7,6 +7,7 @@
   let secondDieLabel:objects.Label;
 
   let rollButton:createjs.Bitmap;
+  let firstDie:createjs.Bitmap;
 
   function Start(): void {
 
@@ -23,9 +24,9 @@
 
   function Update(event: createjs.Event): void {
 
-     firstDieLabel.x = firstDieLabel.x + 5; // move the text to the right of the canvas every frame
+     firstDieLabel.rotation = 0; // rotate counter clockwise every frame
 
-     secondDieLabel.y = secondDieLabel.y + 7; // move the text to the bottom of the canvas every frame
+     secondDieLabel.rotation = 0;
 
      stage.update(); // redraw the stage
 
@@ -34,24 +35,43 @@
 
   function Main(): void {
 
-    firstDieLabel = new objects.Label("Click on Projects! For Star Wars Movie Poster", "20px", "Consolas", "#000000", 125, 125, true);
+    firstDieLabel = new objects.Label("1", "24px", "Arial", "#000000", 125, 125, true);
+    firstDieLabel.regX = firstDieLabel.getBounds().width * 0.5;
+    firstDieLabel.regY = firstDieLabel.getBounds().height * 0.5;
+    firstDieLabel.x = 125;
+    firstDieLabel.y = 220;
     stage.addChild(firstDieLabel);
 
     // add a goodbyeLabel to the stage
-    secondDieLabel = new objects.Label("Or Click Projects Button!", "24px", "Arial", "#FF0000", 125, 125, true);
+    secondDieLabel = new objects.Label("2", "24px", "Arial", "#FF0000", 125, 125, true);
+    secondDieLabel.regX = secondDieLabel.getBounds().width * 0.5;
+    secondDieLabel.regY = secondDieLabel.getBounds().height * 0.5;
+    secondDieLabel.x = 225;
+    secondDieLabel.y = 220;
     stage.addChild(secondDieLabel);
 
     // add a rollButton to the stage
     rollButton = new createjs.Bitmap("../../Assets/images/rollButton.png");
     rollButton.regX = rollButton.getBounds().width * 0.5;
     rollButton.regY = rollButton.getBounds().height * 0.5;
-    rollButton.x = 125;
-    rollButton.y = 200;
+    rollButton.x = 175;
+    rollButton.y = 340;
     stage.addChild(rollButton);
 
     rollButton.on("click", function() {
     firstDieLabel.text = "Click on Projects! For Star Wars Movie Poster";
     secondDieLabel.text = "Or Click Projects Button!";
+  }
+
+    function Update(event: createjs.Event): void {
+  
+    firstDie = new createjs.Bitmap("../../Assets/images/1.png");
+    firstDie.regX = firstDie.getBounds().width * 0.5;
+    firstDie.regY = firstDie.getBounds().height * 0.5;
+    firstDie.x = 125;
+    firstDie.y = 200;
+    stage.addChild(firstDie);
+
     });
   }
 
