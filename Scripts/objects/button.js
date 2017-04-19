@@ -33,9 +33,7 @@ var objects;
          * @memberOf Button
          */
         function Button(loader, _imageString, x, y, _isCentered) {
-            var _this = 
-            // send the result of the preload queue to the superclass constructor
-            _super.call(this, loader.getResult(_imageString)) || this;
+            var _this = _super.call(this, _imageString) || this;
             _this._imageString = _imageString;
             _this._isCentered = _isCentered;
             // check to see if the user requires the button's pivot to be centered

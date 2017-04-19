@@ -27,8 +27,7 @@ module objects {
       private _imageString:string,
       x:number, y:number,
       private _isCentered: boolean) {
-      // send the result of the preload queue to the superclass constructor
-      super(loader.getResult(_imageString));
+      super(_imageString);
 
       // check to see if the user requires the button's pivot to be centered
       if(_isCentered) {
