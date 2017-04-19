@@ -25,6 +25,8 @@
   let fifthDie:createjs.Bitmap;
   let sixthDie:createjs.Bitmap;
 
+  let Myimages:createjs.Bitmap;
+
 
   function Start(): void {
 
@@ -67,28 +69,28 @@
     secondDieLabel.y = 270;
     stage.addChild(secondDieLabel);
 
-    thirdDieLabel = new objects.Label("2", "24px", "Arial", "#FF0000", 125, 125, true);
+    thirdDieLabel = new objects.Label("3", "24px", "Arial", "#FF0000", 125, 125, true);
     thirdDieLabel.regX = thirdDieLabel.getBounds().width * 0.5;
     thirdDieLabel.regY = thirdDieLabel.getBounds().height * 0.5;
     thirdDieLabel.x = 255;
     thirdDieLabel.y = 270;
     stage.addChild(thirdDieLabel);
 
-    forthDieLabel = new objects.Label("2", "24px", "Arial", "#FF0000", 125, 125, true);
+    forthDieLabel = new objects.Label("4", "24px", "Arial", "#FF0000", 125, 125, true);
     forthDieLabel.regX = forthDieLabel.getBounds().width * 0.5;
     forthDieLabel.regY = forthDieLabel.getBounds().height * 0.5;
     forthDieLabel.x = 255;
     forthDieLabel.y = 270;
     stage.addChild(forthDieLabel);
 
-    fifthDieLabel = new objects.Label("2", "24px", "Arial", "#FF0000", 125, 125, true);
+    fifthDieLabel = new objects.Label("5", "24px", "Arial", "#FF0000", 125, 125, true);
     fifthDieLabel.regX = fifthDieLabel.getBounds().width * 0.5;
     fifthDieLabel.regY = fifthDieLabel.getBounds().height * 0.5;
     fifthDieLabel.x = 255;
     fifthDieLabel.y = 270;
     stage.addChild(fifthDieLabel);
 
-    sixthDieLabel = new objects.Label("2", "24px", "Arial", "#FF0000", 125, 125, true);
+    sixthDieLabel = new objects.Label("6", "24px", "Arial", "#FF0000", 125, 125, true);
     sixthDieLabel.regX = sixthDieLabel.getBounds().width * 0.5;
     sixthDieLabel.regY = sixthDieLabel.getBounds().height * 0.5;
     sixthDieLabel.x = 255;
@@ -148,14 +150,18 @@
 
     // rollButton on clikc function to generate a random number 
     rollButton.on("click", function() {
-    Math.floor(Math.random() * 6);
-    firstDieLabel.text = "1";
-    secondDieLabel.text = "2";
-    thirdDieLabel.text = "3";
-    forthDieLabel.text = "4";
-    fifthDieLabel.text = "5";
-    sixthDieLabel.text = "6";
 
+    let firstDieLabel = 1 + Math.floor(Math.random()) * 6;
+    let secondDieLabel = 1 + Math.floor(Math.random()) * 6;
+
+    let randomImage = 1 + Math.floor(Math.random()) * 6;
+    // firstDieLabel.text = "1";
+    // secondDieLabel.text = "2";
+    // thirdDieLabel.text = "3";
+    // forthDieLabel.text = "4";
+    // fifthDieLabel.text = "5";
+    // sixthDieLabel.text = "6";
+    
     });
   }
 
